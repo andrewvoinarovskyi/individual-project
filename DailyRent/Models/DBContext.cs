@@ -9,9 +9,11 @@ public class DailyRentContext : DbContext
     public DbSet<Apartment> Apartments { get; set; }
     public DbSet<Type> Types { get; set; }
 
+    public DailyRentContext(DbContextOptions<DailyRentContext> options) : base(options) {}
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        base.OnConfiguring(optionsBuilder);
+        base.OnConfiguring(optionsBuilder); 
     }
 
 }
